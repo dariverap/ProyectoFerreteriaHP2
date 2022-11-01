@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using api_ferreteria;
 
 namespace api_ferreteria.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221101210558_version8")]
+    partial class version8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,12 +103,6 @@ namespace api_ferreteria.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<decimal>("subtotal")
-                        .HasColumnType("decimal(20,2)");
-
-                    b.Property<decimal>("total")
-                        .HasColumnType("decimal(20,2)");
-
                     b.HasKey("id");
 
                     b.HasIndex("ClienteId");
@@ -138,9 +134,6 @@ namespace api_ferreteria.Migrations
 
                     b.Property<bool>("estado")
                         .HasColumnType("bit");
-
-                    b.Property<decimal>("importe")
-                        .HasColumnType("decimal(20,2)");
 
                     b.Property<decimal>("precio")
                         .HasColumnType("decimal(20,2)");

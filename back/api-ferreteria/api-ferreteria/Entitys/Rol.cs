@@ -10,7 +10,8 @@ namespace api_ferreteria.Entitys
         [Required]
         [StringLength(maximumLength: 20)]
         public string nombre { get; set; }
-
+        [Required]
+        public bool estado { get; set; }
         public List<Empleado> empleado { get; set; }
     }
 }

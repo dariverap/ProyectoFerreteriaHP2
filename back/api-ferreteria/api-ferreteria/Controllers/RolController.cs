@@ -10,33 +10,32 @@ namespace api_ferreteria.Controllers
     //indiacmos que es un controlador
     [ApiController]
     //definir la ruta de acceso al controlador
-    [Route("api-ferreteria/cliente")]
+    [Route("api-ferreteria/rol")]
     //Controller base es una herencia para que sea un controlador
-    public class ClienteController : ControllerBase
+    public class RolController:ControllerBase
     {
         private readonly ApplicationDbContext context;
 
-        public ClienteController(ApplicationDbContext context)
+        public RolController(ApplicationDbContext context)
         {
             this.context = context;
         }
 
         //cuando queremos obtener informacion
         [HttpGet]
-        public async Task<ActionResult<List<Cliente>>> findAll()
+        public async Task<ActionResult<List<Rol>>> findAll()
         {
-            return await context.Cliente.ToListAsync();
+            return await context.Rol.ToListAsync();
         }
         //queremos obtener solo la informacion de los de estado "true" habilitados
         [HttpGet("custom")]
-        public async Task<ActionResult<List<Cliente>>> findAllCustom()
+        public async Task<ActionResult<List<Rol>>> findAllCustom()
         {
-            return await context.Cliente.Where(x => x.estado == true).ToListAsync();
+            return await context.Rol.Where(x => x.estado == true).ToListAsync();
         }
-
         //cuando queremos guardar informacion
         [HttpPost]
-        public async Task<ActionResult> add(Cliente a)
+        public async Task<ActionResult> add(Rol a)
         {
             context.Add(a);
             await context.SaveChangesAsync();
@@ -45,15 +44,14 @@ namespace api_ferreteria.Controllers
 
         //cuando queremos buscar informacion por el id
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Cliente>> findById(int id)
+        public async Task<ActionResult<Rol>> findById(int id)
         {
-            var cliente = await context.Cliente.FirstOrDefaultAsync(x => x.id == id);
-            return cliente;
+            var rol = await context.Rol.FirstOrDefaultAsync(x => x.id == id);
+            return rol;
         }
-
-        //cuando queremos actualizar informaion
+        //cuando queremos actualizar informacion
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> update(Cliente a, int id)
+        public async Task<ActionResult> update(Rol a, int id)
         {
             if (a.id != id)
             {
@@ -68,17 +66,16 @@ namespace api_ferreteria.Controllers
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> delete(int id)
         {
-            var existe = await context.Cliente.AnyAsync(x => x.id == id);
+            var existe = await context.Rol.AnyAsync(x => x.id == id);
             if (!existe)
             {
                 return NotFound();
             }
-            var cliente = await context.Cliente.FirstOrDefaultAsync(x => x.id == id);
-            cliente.estado = false;
-            context.Update(cliente);
+            var rol = await context.Rol.FirstOrDefaultAsync(x => x.id == id);
+            rol.estado = false;
+            context.Update(rol);
             await context.SaveChangesAsync();
             return Ok();
         }
-
     }
 }

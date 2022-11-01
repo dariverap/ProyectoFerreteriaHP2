@@ -13,9 +13,15 @@ namespace api_ferreteria.Entitys
         [Required]
         [Column(TypeName = "decimal(20,2)")]
         public decimal precio { get; set; }
-
-        public Comprobante comprobante { get; set; }
-        public Producto producto { get; set; }
+        [Required]
+        [Column(TypeName = "decimal(20,2)")]
+        public decimal importe { get; set; }
+        [Required]
+        public bool estado { get; set; }
+        [Required]
+        public int ComprobanteId { get; set; }
+        [Required]
+        public int ProductoId { get; set; }
 
 
     }

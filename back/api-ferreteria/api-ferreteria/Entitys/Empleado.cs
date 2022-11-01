@@ -8,17 +8,17 @@ namespace api_ferreteria.Entitys
         [Key]
         public int id { get; set; }
         [Required]
-        [StringLength(maximumLength: 10)]
-        public string codigo { get; set; }
-        [Required]
         [StringLength(maximumLength: 20)]
         public string nombre { get; set; }
         [Required]
         [StringLength(maximumLength: 20)]
         public string apellido { get; set; }
         [Required]
-         
-        public Rol rol { get; set; }
+        public bool estado { get; set; }
+        [Required]
+        public int RolId { get; set; }
+        public Usuario usuario { get; set; }
+        
 
     }
 }

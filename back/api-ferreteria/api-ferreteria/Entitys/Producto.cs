@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection;
 
 namespace api_ferreteria.Entitys
 {
@@ -10,19 +11,18 @@ namespace api_ferreteria.Entitys
         [Key]
         public int id { get; set; }
         [Required]
-        [StringLength(maximumLength: 20)]
+        [StringLength(maximumLength: 50)]
         public string nombre { get; set; }
         [Required]
-        [StringLength(maximumLength: 10)]
-        public string codigo { get; set; }
+        public string descripcion { get; set; }
         [Required]
-        [StringLength(maximumLength: 20)]
-        public string estado { get; set; }
+        public bool estado { get; set; }
         [Required]
         [Column(TypeName = "decimal(20,2)")]
         public decimal precio { get; set; }
-
-        public Categoria categoria { get; set; }
+        [Required]
+        public int CategoriaId { get; set; }
+        
         public List<Detalle> detalle { get; set; }
 
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dp4mjNH0JU+e8ayjPwL3begQShK7gJfwuB0UAWVtm/3rCt7z6waw98c2BzRVZmdfUxQxAJVu89ZEXxs/29kNXw==",
+  "dgSpecHash": "BZ+FAMq3ecylKz8Cv/D60HwPOChL3tsBkcvF5zo9yu9wU22PvCHClKOrhE74qZPe7N0sgNJrCOOgdIvy16N+wg==",
   "success": true,
-  "projectFilePath": "D:\\CICLO 4\\ProyectosHP2\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
+  "projectFilePath": "D:\\CICLO 4\\ProyectosHP2\\PRUEBA\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Diego\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Diego\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.17\\microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",

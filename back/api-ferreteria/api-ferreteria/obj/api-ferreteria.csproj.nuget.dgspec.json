@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CICLO 4\\ProyectosHP2\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj": {}
+    "D:\\CICLO 4\\ProyectosHP2\\PRUEBA\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj": {}
   },
   "projects": {
-    "D:\\CICLO 4\\ProyectosHP2\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj": {
+    "D:\\CICLO 4\\ProyectosHP2\\PRUEBA\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CICLO 4\\ProyectosHP2\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
+        "projectUniqueName": "D:\\CICLO 4\\ProyectosHP2\\PRUEBA\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
         "projectName": "api-ferreteria",
-        "projectPath": "D:\\CICLO 4\\ProyectosHP2\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
+        "projectPath": "D:\\CICLO 4\\ProyectosHP2\\PRUEBA\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
         "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-        "outputPath": "D:\\CICLO 4\\ProyectosHP2\\api-ferreteria\\api-ferreteria\\obj\\",
+        "outputPath": "D:\\CICLO 4\\ProyectosHP2\\PRUEBA\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

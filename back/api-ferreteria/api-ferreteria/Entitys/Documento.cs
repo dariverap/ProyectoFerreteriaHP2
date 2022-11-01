@@ -10,6 +10,9 @@ namespace api_ferreteria.Entitys
         [Required]
         [StringLength(maximumLength: 20)]
         public string nombre { get; set; }
+        [Required]
+        public bool estado { get; set; }
+        // LLAVES FORANEAS
         public List<Comprobante> comprobante { get; set; }
     }
 }

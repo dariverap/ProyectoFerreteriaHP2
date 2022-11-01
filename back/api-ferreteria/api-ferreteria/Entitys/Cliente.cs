@@ -16,8 +16,7 @@ namespace api_ferreteria.Entitys
         [StringLength(maximumLength: 12)]
         public string numdocumento { get; set; }
         [Required]
-        [StringLength(maximumLength: 30)]
-        public string estado { get; set; }
+        public bool estado { get; set; }
 
         public List<Comprobante> comprobante { get; set; }
 

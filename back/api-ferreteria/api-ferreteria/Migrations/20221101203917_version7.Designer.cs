@@ -10,8 +10,8 @@ using api_ferreteria;
 namespace api_ferreteria.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221008215535_Inicial")]
-    partial class Inicial
+    [Migration("20221101203917_version7")]
+    partial class version7
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,9 @@ namespace api_ferreteria.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
 
                     b.Property<string>("nombre")
                         .IsRequired()
@@ -49,10 +52,8 @@ namespace api_ferreteria.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("estado")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
 
                     b.Property<string>("nombre")
                         .IsRequired()
@@ -76,22 +77,23 @@ namespace api_ferreteria.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("clienteid")
+                    b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("documentoid")
+                    b.Property<int>("DocumentoId")
                         .HasColumnType("int");
 
-                    b.Property<string>("estado")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                    b.Property<int>("FormaPagoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("fecha")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("formapagoid")
-                        .HasColumnType("int");
+                        .HasColumnType("date");
 
                     b.Property<decimal>("igv")
                         .HasColumnType("decimal(20,2)");
@@ -101,18 +103,15 @@ namespace api_ferreteria.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("usuarioid")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
 
-                    b.HasIndex("clienteid");
+                    b.HasIndex("ClienteId");
 
-                    b.HasIndex("documentoid");
+                    b.HasIndex("DocumentoId");
 
-                    b.HasIndex("formapagoid");
+                    b.HasIndex("FormaPagoId");
 
-                    b.HasIndex("usuarioid");
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Comprobante");
                 });
@@ -124,23 +123,23 @@ namespace api_ferreteria.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("cantidad")
+                    b.Property<int>("ComprobanteId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("comprobanteid")
+                    b.Property<int>("ProductoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("cantidad")
                         .HasColumnType("int");
 
                     b.Property<decimal>("precio")
                         .HasColumnType("decimal(20,2)");
 
-                    b.Property<int?>("productoid")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
 
-                    b.HasIndex("comprobanteid");
+                    b.HasIndex("ComprobanteId");
 
-                    b.HasIndex("productoid");
+                    b.HasIndex("ProductoId");
 
                     b.ToTable("Detalle");
                 });
@@ -151,6 +150,9 @@ namespace api_ferreteria.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
 
                     b.Property<string>("nombre")
                         .IsRequired()
@@ -169,27 +171,25 @@ namespace api_ferreteria.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("RolId")
+                        .HasColumnType("int");
+
                     b.Property<string>("apellido")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("codigo")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
 
                     b.Property<string>("nombre")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("rolid")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
 
-                    b.HasIndex("rolid");
+                    b.HasIndex("RolId");
 
                     b.ToTable("Empleado");
                 });
@@ -200,6 +200,9 @@ namespace api_ferreteria.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
 
                     b.Property<string>("nombre")
                         .IsRequired()
@@ -218,30 +221,27 @@ namespace api_ferreteria.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("categoriaid")
+                    b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
-                    b.Property<string>("codigo")
+                    b.Property<string>("descripcion")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("estado")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
 
                     b.Property<string>("nombre")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("precio")
                         .HasColumnType("decimal(20,2)");
 
                     b.HasKey("id");
 
-                    b.HasIndex("categoriaid");
+                    b.HasIndex("CategoriaId");
 
                     b.ToTable("Producto");
                 });
@@ -252,6 +252,9 @@ namespace api_ferreteria.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
 
                     b.Property<string>("nombre")
                         .IsRequired()
@@ -270,23 +273,16 @@ namespace api_ferreteria.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("codigo")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                    b.Property<int>("EmpleadoId")
+                        .HasColumnType("int");
 
                     b.Property<string>("contraseña")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("empleadoid")
-                        .HasColumnType("int");
-
-                    b.Property<string>("estado")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
 
                     b.Property<string>("nombre")
                         .IsRequired()
@@ -305,80 +301,79 @@ namespace api_ferreteria.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("empleadoid");
+                    b.HasIndex("EmpleadoId")
+                        .IsUnique();
 
                     b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("api_ferreteria.Entitys.Comprobante", b =>
                 {
-                    b.HasOne("api_ferreteria.Entitys.Cliente", "cliente")
+                    b.HasOne("api_ferreteria.Entitys.Cliente", null)
                         .WithMany("comprobante")
-                        .HasForeignKey("clienteid");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("api_ferreteria.Entitys.Documento", "documento")
+                    b.HasOne("api_ferreteria.Entitys.Documento", null)
                         .WithMany("comprobante")
-                        .HasForeignKey("documentoid");
+                        .HasForeignKey("DocumentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("api_ferreteria.Entitys.FormaPago", "formapago")
+                    b.HasOne("api_ferreteria.Entitys.FormaPago", null)
                         .WithMany("comprobante")
-                        .HasForeignKey("formapagoid");
+                        .HasForeignKey("FormaPagoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("api_ferreteria.Entitys.Usuario", "usuario")
+                    b.HasOne("api_ferreteria.Entitys.Usuario", null)
                         .WithMany("comprobante")
-                        .HasForeignKey("usuarioid");
-
-                    b.Navigation("cliente");
-
-                    b.Navigation("documento");
-
-                    b.Navigation("formapago");
-
-                    b.Navigation("usuario");
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("api_ferreteria.Entitys.Detalle", b =>
                 {
-                    b.HasOne("api_ferreteria.Entitys.Comprobante", "comprobante")
+                    b.HasOne("api_ferreteria.Entitys.Comprobante", null)
                         .WithMany("detalle")
-                        .HasForeignKey("comprobanteid");
+                        .HasForeignKey("ComprobanteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("api_ferreteria.Entitys.Producto", "producto")
+                    b.HasOne("api_ferreteria.Entitys.Producto", null)
                         .WithMany("detalle")
-                        .HasForeignKey("productoid");
-
-                    b.Navigation("comprobante");
-
-                    b.Navigation("producto");
+                        .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("api_ferreteria.Entitys.Empleado", b =>
                 {
-                    b.HasOne("api_ferreteria.Entitys.Rol", "rol")
+                    b.HasOne("api_ferreteria.Entitys.Rol", null)
                         .WithMany("empleado")
-                        .HasForeignKey("rolid")
+                        .HasForeignKey("RolId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("rol");
                 });
 
             modelBuilder.Entity("api_ferreteria.Entitys.Producto", b =>
                 {
-                    b.HasOne("api_ferreteria.Entitys.Categoria", "categoria")
+                    b.HasOne("api_ferreteria.Entitys.Categoria", null)
                         .WithMany("producto")
-                        .HasForeignKey("categoriaid");
-
-                    b.Navigation("categoria");
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("api_ferreteria.Entitys.Usuario", b =>
                 {
-                    b.HasOne("api_ferreteria.Entitys.Empleado", "empleado")
-                        .WithMany()
-                        .HasForeignKey("empleadoid");
-
-                    b.Navigation("empleado");
+                    b.HasOne("api_ferreteria.Entitys.Empleado", null)
+                        .WithOne("usuario")
+                        .HasForeignKey("api_ferreteria.Entitys.Usuario", "EmpleadoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("api_ferreteria.Entitys.Categoria", b =>
@@ -399,6 +394,11 @@ namespace api_ferreteria.Migrations
             modelBuilder.Entity("api_ferreteria.Entitys.Documento", b =>
                 {
                     b.Navigation("comprobante");
+                });
+
+            modelBuilder.Entity("api_ferreteria.Entitys.Empleado", b =>
+                {
+                    b.Navigation("usuario");
                 });
 
             modelBuilder.Entity("api_ferreteria.Entitys.FormaPago", b =>
