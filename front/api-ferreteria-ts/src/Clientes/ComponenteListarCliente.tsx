@@ -70,7 +70,6 @@ useEffect(() => {
           </tbody>
         </table>
       </div>
-
       <a href="clientes/registrar" className="btn btn-primary">
         Registrar Cliente
       </a>

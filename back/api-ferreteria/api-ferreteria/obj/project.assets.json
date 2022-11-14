@@ -5805,23 +5805,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Diego\\.nuget\\packages\\": {},
+    "C:\\Users\\mathi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CICLO 4\\ProyectosHP2\\PRUEBA\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
+      "projectUniqueName": "C:\\Users\\mathi\\Desktop\\IDAD CICLO 4\\HERRAMIENTAS DE PROGRAMACION II\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
       "projectName": "api-ferreteria",
-      "projectPath": "D:\\CICLO 4\\ProyectosHP2\\PRUEBA\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
-      "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-      "outputPath": "D:\\CICLO 4\\ProyectosHP2\\PRUEBA\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\obj\\",
+      "projectPath": "C:\\Users\\mathi\\Desktop\\IDAD CICLO 4\\HERRAMIENTAS DE PROGRAMACION II\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\api-ferreteria.csproj",
+      "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathi\\Desktop\\IDAD CICLO 4\\HERRAMIENTAS DE PROGRAMACION II\\ProyectoFerreteriaHP2\\back\\api-ferreteria\\api-ferreteria\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
