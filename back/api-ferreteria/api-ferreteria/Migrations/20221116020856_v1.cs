@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace api_ferreteria.Migrations
 {
-    public partial class inicial2 : Migration
+    public partial class v1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,6 +14,7 @@ namespace api_ferreteria.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     nombre = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     estado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -85,7 +86,9 @@ namespace api_ferreteria.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nombre = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    nombre = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    stock = table.Column<int>(type: "int", nullable: false),
                     estado = table.Column<bool>(type: "bit", nullable: false),
                     precio = table.Column<decimal>(type: "decimal(20,2)", nullable: false),
                     CategoriaId = table.Column<int>(type: "int", nullable: false)
@@ -154,8 +157,10 @@ namespace api_ferreteria.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     numero = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    fecha = table.Column<DateTime>(type: "date", nullable: false),
                     igv = table.Column<decimal>(type: "decimal(20,2)", nullable: false),
+                    subtotal = table.Column<decimal>(type: "decimal(20,2)", nullable: false),
+                    total = table.Column<decimal>(type: "decimal(20,2)", nullable: false),
                     estado = table.Column<bool>(type: "bit", nullable: false),
                     ClienteId = table.Column<int>(type: "int", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: false),
@@ -199,6 +204,8 @@ namespace api_ferreteria.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     cantidad = table.Column<int>(type: "int", nullable: false),
                     precio = table.Column<decimal>(type: "decimal(20,2)", nullable: false),
+                    importe = table.Column<decimal>(type: "decimal(20,2)", nullable: false),
+                    estado = table.Column<bool>(type: "bit", nullable: false),
                     ComprobanteId = table.Column<int>(type: "int", nullable: false),
                     ProductoId = table.Column<int>(type: "int", nullable: false)
                 },
