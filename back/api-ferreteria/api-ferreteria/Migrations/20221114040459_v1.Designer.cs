@@ -10,8 +10,8 @@ using api_ferreteria;
 namespace api_ferreteria.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221101203917_version7")]
-    partial class version7
+    [Migration("20221114040459_v1")]
+    partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,10 @@ namespace api_ferreteria.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("estado")
                         .HasColumnType("bit");
@@ -103,6 +107,12 @@ namespace api_ferreteria.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<decimal>("subtotal")
+                        .HasColumnType("decimal(20,2)");
+
+                    b.Property<decimal>("total")
+                        .HasColumnType("decimal(20,2)");
+
                     b.HasKey("id");
 
                     b.HasIndex("ClienteId");
@@ -131,6 +141,12 @@ namespace api_ferreteria.Migrations
 
                     b.Property<int>("cantidad")
                         .HasColumnType("int");
+
+                    b.Property<bool>("estado")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("importe")
+                        .HasColumnType("decimal(20,2)");
 
                     b.Property<decimal>("precio")
                         .HasColumnType("decimal(20,2)");
@@ -238,6 +254,9 @@ namespace api_ferreteria.Migrations
 
                     b.Property<decimal>("precio")
                         .HasColumnType("decimal(20,2)");
+
+                    b.Property<int>("stock")
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 
