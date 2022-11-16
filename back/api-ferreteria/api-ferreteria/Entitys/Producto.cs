@@ -16,6 +16,8 @@ namespace api_ferreteria.Entitys
         [Required]
         public string descripcion { get; set; }
         [Required]
+        public int stock { get; set; }
+        [Required]
         public bool estado { get; set; }
         [Required]
         [Column(TypeName = "decimal(20,2)")]

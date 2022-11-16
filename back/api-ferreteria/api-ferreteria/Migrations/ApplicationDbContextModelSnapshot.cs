@@ -249,6 +249,9 @@ namespace api_ferreteria.Migrations
                     b.Property<decimal>("precio")
                         .HasColumnType("decimal(20,2)");
 
+                    b.Property<int>("stock")
+                        .HasColumnType("int");
+
                     b.HasKey("id");
 
                     b.HasIndex("CategoriaId");
