@@ -14,6 +14,7 @@ namespace api_ferreteria.Entitys
         public string descripcion { get; set; }
         [Required]
         public bool estado { get; set; }
+        //LLave foranea
         public List<Producto> producto { get; set; }
     }
 }

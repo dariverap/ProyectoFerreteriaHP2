@@ -4,5 +4,4 @@ export interface ClienteDTO{
     apellido: string;
     numdocumento: string;
     estado: boolean;
-
 }

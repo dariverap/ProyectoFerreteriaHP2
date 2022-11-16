@@ -2,7 +2,7 @@
 
 namespace api_ferreteria.Migrations
 {
-    public partial class version4 : Migration
+    public partial class v1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
