@@ -11,6 +11,8 @@ namespace api_ferreteria.Entitys
         [StringLength(maximumLength: 20)]
         public string nombre { get; set; }
         [Required]
+        public string descripcion { get; set; }
+        [Required]
         public bool estado { get; set; }
         public List<Producto> producto { get; set; }
     }
