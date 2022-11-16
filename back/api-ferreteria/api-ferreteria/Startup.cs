@@ -39,15 +39,13 @@ namespace api_ferreteria
                 );
             ///////////////////////
             services.AddCors(
-              options => {
-                  var frontendurl = Configuration
-                  .GetValue<string>("frontend_url");
-                  options.AddDefaultPolicy(builder =>
-                  {
-                      builder.WithOrigins(frontendurl)
-                      .AllowAnyMethod().AllowAnyHeader();
-                  });
-              });
+                options => {
+                    var frontendurl = Configuration.GetValue<string>("frontend_url");
+                    options.AddDefaultPolicy(builder =>
+                    {
+                        builder.WithOrigins(frontendurl).AllowAnyMethod().AllowAnyHeader();
+                    });
+                });
             ////////////////////////////////////////////////////////////////////////////
             services.AddSwaggerGen(c =>
             {

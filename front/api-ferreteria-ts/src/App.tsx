@@ -8,7 +8,7 @@ import rutas from './route-config';
 function App() {
   return (
     <div className="container">
-      <ComponenteMenu/>
+      <ComponenteMenu/>      
       <BrowserRouter>
         <Routes>
         {rutas.map(ruta =>

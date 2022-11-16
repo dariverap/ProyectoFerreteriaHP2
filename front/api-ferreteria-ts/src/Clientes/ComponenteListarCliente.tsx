@@ -1,32 +1,33 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ClienteDTO } from "./cliente.model";
 
-export default function ComponenteListarCliente(){
-//definimos la direccion del END POINT
-const url = "https://localhost:44318/api-ferreteria/cliente";
-//creamos una variable y una funcion
-//variable --> autores
-//funcion --> setAutores
-const [clientes, setClientes] = useState<ClienteDTO[]>();
-//se realiza la peticion al API por medio del axios
-const peticionesGet = async () => {
-  await axios
-    .get(url)
-    .then((response) => {
-      setClientes(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+export default function ComponenteListarCliente() {
+  //definimos la direccion del END POINT
+  const url = "https://localhost:44318/api-ferreteria/cliente/custom";
+  //creamos una variable y una funcion
+  //variable --> autores
+  //funcion --> setAutores
+  const [clientes, setClientes] = useState<ClienteDTO[]>();
+  //se realiza la peticion al API por medio del axios
+  const peticionesGet = async () => {
+    await axios
+      .get(url)
+      .then((response) => {
+        setClientes(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-//se llama a la peticion
-useEffect(() => {
-  peticionesGet();
-}, []);
-////////////////////////////////////
-  return(
+  //se llama a la peticion
+  useEffect(() => {
+    peticionesGet();
+  }, []);
+  ////////////////////////////////////
+  return (
     <div>
       <h1>Lista de Clientes</h1>
       <div className="table-responsive">
@@ -46,7 +47,7 @@ useEffect(() => {
             {/* se muestra los datos de la tabla */}
             {clientes?.map((cliente) => (
               <tr key={cliente.codigo}>
-                <th scope="row">{cliente.codigo}</th>
+                <th scope="row"> {cliente.codigo}</th>
                 
                 <td>{cliente.nombre}</td>
                 <td>{cliente.apellido}</td>
