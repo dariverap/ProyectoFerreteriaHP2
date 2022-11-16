@@ -37,7 +37,17 @@ namespace api_ferreteria
                     Configuration.GetConnectionString("defaultConnection")
                     )
                 );
-
+            ///////////////////////
+            services.AddCors(
+              options => {
+                  var frontendurl = Configuration
+                  .GetValue<string>("frontend_url");
+                  options.AddDefaultPolicy(builder =>
+                  {
+                      builder.WithOrigins(frontendurl)
+                      .AllowAnyMethod().AllowAnyHeader();
+                  });
+              });
             ////////////////////////////////////////////////////////////////////////////
             services.AddSwaggerGen(c =>
             {
@@ -60,6 +70,8 @@ namespace api_ferreteria
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
